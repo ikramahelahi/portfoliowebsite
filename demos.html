@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Project Demos</title>
+    </head>
+    <body>
+        <header>
+            <h1>Project Demos</h1>
+        </header>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="demos.html">Demos</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="layout-wrapper">
+            <main>
+                <h2>Palatable Demo</h2>
+                <p>Watch a walkthrough of the Palatable application.</p>
+                <div class="video-container">
+                    <div id="palatable-player"></div>
+                </div>
+
+                <h2>HUBites Demo (Part 1)</h2>
+                <p>Watch a walkthrough of the HUBites application.</p>
+                <div class="video-container">
+                    <!-- Replace HUBITES_VIDEO_ID with your YouTube video ID. -->
+                    <div id="hubites-player"></div>
+                </div>
+
+                <h2>HUBites Demo (Part 2)</h2>
+                <p>Watch a walkthrough of the HUBites application.</p>
+                <div class="video-container">
+                    <!-- Replace HUBITES_VIDEO_ID with your YouTube video ID. -->
+                    <div id="hubites-player-2"></div>
+                </div>
+
+                <h2>Khidmat Demo</h2>
+                <p>Watch a walkthrough of the Khidmat application.</p>
+                <div class="video-container">
+                    <!-- Replace KHIDMAT_VIDEO_ID with your YouTube video ID. -->
+                    <div id="khidmat-player"></div>
+                </div>
+            </main>
+        </div>
+
+        <footer>
+            <p>Copyright &copy; 2026 Ikramah Elahi</p>
+        </footer>
+
+        <!-- YouTube IFrame Player API -->
+        <script src="https://www.youtube.com/iframe_api"></script>
+        <script>
+            function onYouTubeIframeAPIReady() {
+                const videoPlayers = [
+                    { elementId: "palatable-player", videoId: "xOOXM7mG2ZU" },
+                    { elementId: "hubites-player", videoId: "ouySkVTDHV4" },
+                    { elementId: "hubites-player-2", videoId: "wDagLuG8Kb8" },
+                    { elementId: "khidmat-player", videoId: "cdxYAo-wF4k" }
+                ];
+
+                videoPlayers.forEach(function (video) {
+                    new YT.Player(video.elementId, {
+                        videoId: video.videoId,
+                        playerVars: { rel: 0 }
+                    });
+                });
+            }
+        </script>
+    </body>
+</html>
